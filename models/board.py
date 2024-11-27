@@ -41,20 +41,20 @@ class Board:
         draw = 1
 
         for row in range(3):
-            if self.grid[row][0] == self.grid[row][1] == self.grid[row][2] and self.grid[row][0] != "": # to prevent the whole row is empty
+            if self.grid[row][0] == self.grid[row][1] == self.grid[row][2] and self.grid[row][0] != " ": # to prevent the whole row is empty
                 draw = 0
                 return self.grid[row][0]
             
         for col in range(3):
-            if self.grid[0][col] == self.grid[1][col] == self.grid[2][col] and self.grid[0][col] != "": # to prevent the whole col is empty
+            if self.grid[0][col] == self.grid[1][col] == self.grid[2][col] and self.grid[0][col] != " ": # to prevent the whole col is empty
                 draw = 0
                 return self.grid[0][col]
         
-        if self.grid[0][0] == self.grid[1][1] == self.grid[2][2] and self.grid[0][0] != "": # to prevent the whole diagonal line is empty
+        if self.grid[0][0] == self.grid[1][1] == self.grid[2][2] and self.grid[0][0] != " ": # to prevent the whole diagonal line is empty
             draw = 0
             return self.grid[0][0]
         
-        if self.grid[0][2] == self.grid[1][1] == self.grid[2][0] and self.grid[0][2] != "": # to prevent the whole diagonal line is empty
+        if self.grid[0][2] == self.grid[1][1] == self.grid[2][0] and self.grid[0][2] != " ": # to prevent the whole diagonal line is empty
             draw = 0
             return self.grid[0][2]
         

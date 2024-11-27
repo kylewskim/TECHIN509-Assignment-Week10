@@ -48,7 +48,7 @@ def play_tic_tac_toe():
             store_game_data(
                 filename="data/game_data.csv",
                 first_player=first_player,
-                winner=current_player.name
+                winner=current_player.symbol
             )
             break
 
