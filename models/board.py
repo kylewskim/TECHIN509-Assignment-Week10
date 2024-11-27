@@ -14,7 +14,7 @@ class Board:
                     print("   |", end="")
                 else:
                     print(f" {self.grid[row][col]} |", end="")
-                print() # change line
+            print() # change line
         print(" ---" * 3) # finalize with the last line
 
     def update_board(self, row: int, col: int, symbol: str) -> bool:
@@ -41,9 +41,9 @@ class Board:
         draw = 1
 
         for row in range(3):
-            if row[0] == row[1] == row[2] and row[0] != "": # to prevent the whole row is empty
+            if self.grid[row][0] == self.grid[row][1] == self.grid[row][2] and self.grid[row][0] != "": # to prevent the whole row is empty
                 draw = 0
-                return row[0]
+                return self.grid[row][0]
             
         for col in range(3):
             if self.grid[0][col] == self.grid[1][col] == self.grid[2][col] and self.grid[0][col] != "": # to prevent the whole col is empty
@@ -58,9 +58,7 @@ class Board:
             draw = 0
             return self.grid[0][2]
         
-        if draw == 0:
-            draw = 1
-            return ""
+        return ""
 
     def is_full(self) -> bool:
         """
